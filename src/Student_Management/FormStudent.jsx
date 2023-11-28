@@ -41,43 +41,63 @@ export default function FormStudent({
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="form-group mb-2">
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          name="name"
-          className="form-control"
-          id="name"
-          placeholder="Name"
-          value={value.name}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="form-group mb-2">
-        <label htmlFor="account">Account</label>
-        <input
-          type="text"
-          className="form-control"
-          name="account"
-          id="account"
-          placeholder="Account"
-          value={value.account}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="form-group mb-2">
-        <label htmlFor="password" className="form-label">
-          Password
-        </label>
-        <input
-          type="text"
-          className="form-control"
-          name="password"
-          id="password"
-          placeholder="Password"
-          value={value.password}
-          onChange={handleChange}
-        />
+      <div className="row">
+        <div className="form-group col-md-6 mb-2">
+          <label htmlFor="code" className="form-label">
+            Code
+          </label>
+          <input
+            type="text"
+            name="code"
+            className="form-control"
+            id="code"
+            placeholder="code"
+            value={value.code}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group col-md-6 mb-2">
+          <label htmlFor="name" className="form-label">
+            Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            className="form-control"
+            id="name"
+            placeholder="full name"
+            value={value.name}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group col-md-6 mb-2">
+          <label htmlFor="phonenumber" className="form-label">
+            Phone number
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            name="phonenumber"
+            id="phonenumber"
+            placeholder="phone number"
+            value={value.phonenumber}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group col-md-6 mb-2">
+          <label htmlFor="email" className="form-label">
+            Email
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            name="email"
+            id="email"
+            placeholder="email"
+            value={value.email}
+            onChange={handleChange}
+          />
+        </div>
       </div>
       <button className="btn btn-primary" type="submit">
         Submit

@@ -80,7 +80,7 @@ export default function StudentManagement() {
   return (
     <>
       <div className="container header-form">
-        <p>Thông tin sinh viên</p>
+        <p>Student information</p>
       </div>
 
       <div className="container">
