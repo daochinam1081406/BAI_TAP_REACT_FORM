@@ -86,7 +86,7 @@ export default function StudentManagement() {
       <div className="container">
         <Toaster position="top-right" />
         <FormStudent
-          user={selectedStudent}
+          student={selectedStudent}
           onAddStudent={handleAddStudent}
           onUpdateStudent={handleUpdateStudent}
         />
