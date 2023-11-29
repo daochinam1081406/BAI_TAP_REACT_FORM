@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const emptyValue = {
   id: "",
@@ -26,6 +27,29 @@ export default function FormStudent({
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Kiểm tra dữ liệu
+    if (!/^\d+$/.test(value.code)) {
+      toast.error("Mã số phải là số");
+      return;
+    }
+
+    // Sử dụng regex cho ký tự tiếng Việt và khoảng trắng
+    if (
+      !/^[a-zA-Z\sàáạãèéẹẽìíịĩòóọõùúụũưừứựữỳýỵỹđĐÀÁẠÃÈÉẸẼÌÍỊĨÒÓỌÕÙÚỤŨƯỪỨỰỮỲÝỴỸĐ]+$/u.test(
+        value.name
+      )
+    ) {
+      toast.error(
+        "Tên phải chứa chỉ các ký tự chữ, khoảng trắng và có thể bao gồm ký tự tiếng Việt"
+      );
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.email)) {
+      toast.error("Địa chỉ email không hợp lệ");
+      return;
+    }
 
     if (value.id) {
       // Cập nhật
